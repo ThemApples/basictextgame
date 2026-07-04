@@ -6,7 +6,7 @@ class character:
           self.hp = 10
           self.status = "normal"
           self.passive = False
-
+          self.equipment = 0
 
       def print_details(self):
           print(f"--------{self.name}--------")
@@ -23,4 +23,5 @@ class character:
           self.print_details()
 
       def calculate_your_attack(self):
-          return self.attack
+          calculated_damage = self.attack + equipment
+          return calculated_damage

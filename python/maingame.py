@@ -1,7 +1,7 @@
 import character
 import creature
 
-your_character = character.character("Test", 10,10)
+your_character = character.character("Test",10,10)
 your_character.print_details()
 
 easy_monster = creature.monster("Rat")
