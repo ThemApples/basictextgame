@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://d1va506jdcq43"]
+
+[ext_resource type="Texture2D" uid="uid://p2wv5c0trwg3" path="res://Assets/Tiny_Dungeon/tilemap_packed.png" id="1_b25br"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrya5"]
+atlas = ExtResource("1_b25br")
+region = Rect2(64, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi2sw"]
+atlas = ExtResource("1_b25br")
+region = Rect2(48, 112, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrya5"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="BattleScene" type="Control" unique_id=1278871758]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1910808729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.57254905, 0.3529412, 0.41568628, 1)
+
+[node name="MainLayout" type="VBoxContainer" parent="." unique_id=1180037823]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BattleArea" type="HBoxContainer" parent="MainLayout" unique_id=1350118456]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EnemySide" type="CenterContainer" parent="MainLayout/BattleArea" unique_id=718858570]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MainLayout/BattleArea/EnemySide" unique_id=890272722]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_yrya5")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="PlayerSide" type="CenterContainer" parent="MainLayout/BattleArea" unique_id=182338446]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MainLayout/BattleArea/PlayerSide" unique_id=1168749069]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_xi2sw")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MainLayout" unique_id=2046206091]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yrya5")
+
+[node name="Label" type="Label" parent="MainLayout/PanelContainer" unique_id=1938822527]
+layout_mode = 2
+text = "A wild {enemy} Appeared"
+horizontal_alignment = 1

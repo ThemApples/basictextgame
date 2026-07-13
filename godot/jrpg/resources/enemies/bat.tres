@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="enemyData" format=3 uid="uid://bw0l7qkasanu6"]
+
+[ext_resource type="Script" uid="uid://dffim0448vfnq" path="res://scripts/enemy_data.gd" id="1_7gaa2"]
+[ext_resource type="Texture2D" uid="uid://p2wv5c0trwg3" path="res://Assets/Tiny_Dungeon/tilemap_packed.png" id="2_5vt2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vt2m"]
+atlas = ExtResource("2_5vt2m")
+region = Rect2(0, 160, 16, 16)
+
+[resource]
+script = ExtResource("1_7gaa2")
+name = "bat"
+texture = SubResource("AtlasTexture_5vt2m")
+health = 15
+metadata/_custom_type_script = "uid://dffim0448vfnq"

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bysy5sq76xw67"]
 
+[ext_resource type="Script" uid="uid://6e4xj5gkptfp" path="res://scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://p2wv5c0trwg3" path="res://Assets/Tiny_Dungeon/tilemap_packed.png" id="1_v0iea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrya5"]
 size = Vector2(12, 1)
 
 [node name="Player" type="CharacterBody2D" unique_id=1464400479]
+script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=131556582]
 position = Vector2(-8, -16)
