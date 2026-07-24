@@ -4,10 +4,15 @@ extends CharacterBody2D
 @export var ground_layer: TileMapLayer
 @export var encounter_rate: float = 0.1
 @export var monsters : Array[enemyData]
+@export var max_health : int = 100
 
 var distance_traveled : float = 0.0
+var current_health: int
 
 const ENCOUNTER_THRESHOLD : float = 50.0 
+
+func _ready():
+	current_health = max_health
 
 func _physics_process(_delta: float) -> void:
 	var input_direction = Input.get_vector("Move_left","Move_right","Move_up","Move_down")
