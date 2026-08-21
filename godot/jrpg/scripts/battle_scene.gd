@@ -44,16 +44,35 @@ func _on_attack_button_pressed() -> void:
 	var current_attack_damage = rng.randi_range(10,15)
 	current_enemy_health -= current_attack_damage
 	enemy_health_bar.value = current_enemy_health
-	text_label.text = "You hit the monster for "+  current_attack_damage + "damage!"
+	text_label.text = "You hit the monster for "+  str(current_attack_damage) + "damage!"
 	
 	await get_tree().create_timer(1.0).timeout
 	
 	if current_enemy_health <=0:
 		win_battle()
-	else
+	else:
 		enemy_turn()
 func enemy_turn():
 	text_label.text = "monster has attacked"
 	await get_tree().create_timer(1.0).timeout
 	
+	player.current_health -= enemy_damage
+	player_health_bar.value = player.current_health
+	text_label.text = "You took " + str(enemy_damage) + " damage"
+	await get_tree().create_timer(1.0).timeout
 	
+	if player.current_health <= 0:
+		text_label.text = "You were defeated...."
+		await get_tree().create_timer(2.0).timeout
+		
+		await get_tree().reload_current_scene()
+	else:
+		attack_button.disabled = false
+		run_button.disabled = false
+		text_label.text = "What will you do now?"
+		
+func win_battle():
+	text_label.text = "You won"
+	await  get_tree().create_timer(1.0).timeout
+	get_tree().paused = false
+	queue_free()

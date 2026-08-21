@@ -11,5 +11,5 @@ region = Rect2(0, 144, 16, 16)
 script = ExtResource("1_6pnpc")
 name = "slime"
 texture = SubResource("AtlasTexture_wcmes")
-health = 20
+health = 50
 metadata/_custom_type_script = "uid://dffim0448vfnq"

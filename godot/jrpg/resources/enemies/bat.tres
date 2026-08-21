@@ -11,5 +11,5 @@ region = Rect2(0, 160, 16, 16)
 script = ExtResource("1_7gaa2")
 name = "bat"
 texture = SubResource("AtlasTexture_5vt2m")
-health = 15
+health = 50
 metadata/_custom_type_script = "uid://dffim0448vfnq"
